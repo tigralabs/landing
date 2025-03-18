@@ -6,11 +6,24 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { MapPin, Mail, Phone } from "lucide-react";
@@ -20,13 +33,15 @@ const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
   company: z.string().optional(),
   phone: z.string().optional(),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+  message: z
+    .string()
+    .min(10, { message: "Message must be at least 10 characters." }),
 });
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -40,7 +55,7 @@ export default function ContactPage() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
@@ -59,9 +74,12 @@ export default function ContactPage() {
         <section className="py-20 bg-muted/50 flex justify-center">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                Contact Us
+              </h1>
               <p className="text-xl text-muted-foreground">
-                Get in touch with our team to discuss how we can help your business
+                Get in touch with our team to discuss how we can help your
+                business
               </p>
             </div>
           </div>
@@ -75,12 +93,16 @@ export default function ContactPage() {
                   <CardHeader>
                     <CardTitle>Send us a message</CardTitle>
                     <CardDescription>
-                      Fill out the form below and we'll get back to you as soon as possible.
+                      Fill out the form below and we'll get back to you as soon
+                      as possible.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <Form {...form}>
-                      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                      <form
+                        onSubmit={form.handleSubmit(onSubmit)}
+                        className="space-y-6"
+                      >
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <FormField
                             control={form.control}
@@ -117,7 +139,10 @@ export default function ContactPage() {
                               <FormItem>
                                 <FormLabel>Company (Optional)</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="Your company" {...field} />
+                                  <Input
+                                    placeholder="Your company"
+                                    {...field}
+                                  />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -130,7 +155,10 @@ export default function ContactPage() {
                               <FormItem>
                                 <FormLabel>Phone (Optional)</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="Your phone number" {...field} />
+                                  <Input
+                                    placeholder="Your phone number"
+                                    {...field}
+                                  />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -144,17 +172,21 @@ export default function ContactPage() {
                             <FormItem>
                               <FormLabel>Message</FormLabel>
                               <FormControl>
-                                <Textarea 
-                                  placeholder="How can we help you?" 
-                                  className="min-h-[150px]" 
-                                  {...field} 
+                                <Textarea
+                                  placeholder="How can we help you?"
+                                  className="min-h-[150px]"
+                                  {...field}
                                 />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
-                        <Button type="submit" className="w-full" disabled={isSubmitting}>
+                        <Button
+                          type="submit"
+                          className="w-full"
+                          disabled={isSubmitting}
+                        >
                           {isSubmitting ? "Sending..." : "Send Message"}
                         </Button>
                       </form>
@@ -171,7 +203,7 @@ export default function ContactPage() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
-                    <div className="flex items-start gap-4">
+                    {/* <div className="flex items-start gap-4">
                       <MapPin className="h-5 w-5 text-primary mt-0.5" />
                       <div>
                         <h3 className="font-medium">Address</h3>
@@ -181,13 +213,14 @@ export default function ContactPage() {
                           United States
                         </p>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="flex items-start gap-4">
                       <Mail className="h-5 w-5 text-primary mt-0.5" />
                       <div>
                         <h3 className="font-medium">Email</h3>
                         <p className="text-muted-foreground">
-                          info@tigralabs.com<br />
+                          info@tigralabs.com
+                          <br />
                           support@tigralabs.com
                         </p>
                       </div>
@@ -197,7 +230,8 @@ export default function ContactPage() {
                       <div>
                         <h3 className="font-medium">Phone</h3>
                         <p className="text-muted-foreground">
-                          +1 (555) 123-4567<br />
+                          +1 (555) 123-4567
+                          <br />
                           +1 (555) 987-6543
                         </p>
                       </div>
@@ -205,13 +239,28 @@ export default function ContactPage() {
                     <div className="pt-6 border-t">
                       <h3 className="font-medium mb-4">Follow Us</h3>
                       <div className="flex gap-4">
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        <a
+                          href="https://linkedin.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
                           LinkedIn
                         </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        <a
+                          href="https://twitter.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
                           Twitter
                         </a>
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        <a
+                          href="https://facebook.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
                           Facebook
                         </a>
                       </div>
