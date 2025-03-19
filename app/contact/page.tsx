@@ -34,7 +34,6 @@ const formSchema = z.object({
   message: z
     .string()
     .min(10, { message: "Message must be at least 10 characters." }),
-  botField: z.string().optional(),
 });
 
 export default function ContactPage() {
@@ -49,7 +48,6 @@ export default function ContactPage() {
       company: "",
       phone: "",
       message: "",
-      botField: "",
     },
   });
 
@@ -123,19 +121,12 @@ export default function ContactPage() {
                   </CardHeader>
                   <CardContent>
                     {/* Hidden form for Netlify form detection */}
-                    <form
-                      name="contact"
-                      data-netlify="true"
-                      data-netlify-recaptcha="true"
-                      netlify-honeypot="bot-field"
-                      hidden
-                    >
+                    <form name="contact" data-netlify="true" hidden>
                       <input type="text" name="name" />
                       <input type="email" name="email" />
                       <input type="text" name="company" />
                       <input type="text" name="phone" />
                       <textarea name="message"></textarea>
-                      <input type="text" name="bot-field" />
                     </form>
 
                     <Form {...form}>
@@ -143,32 +134,11 @@ export default function ContactPage() {
                         name="contact"
                         method="post"
                         data-netlify="true"
-                        data-netlify-recaptcha="true"
-                        netlify-honeypot="bot-field"
                         onSubmit={form.handleSubmit(onSubmit)}
                         className="space-y-6"
                       >
                         {/* Hidden input for Netlify */}
                         <input type="hidden" name="form-name" value="contact" />
-
-                        {/* Honeypot field */}
-                        <div className="hidden">
-                          <FormField
-                            control={form.control}
-                            name="botField"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>
-                                  Don't fill this out if you're human:
-                                </FormLabel>
-                                <FormControl>
-                                  <Input {...field} />
-                                </FormControl>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
-                        </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <FormField
@@ -249,10 +219,6 @@ export default function ContactPage() {
                             </FormItem>
                           )}
                         />
-
-                        {/* reCAPTCHA */}
-                        <div data-netlify-recaptcha="true"></div>
-
                         <Button
                           type="submit"
                           className="w-full"
