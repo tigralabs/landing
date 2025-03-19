@@ -121,14 +121,6 @@ export function Footer() {
                   Facebook
                 </a>
               </li>
-              <li>
-                <a
-                  href="mailto:info@tigralabs.com"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  info@tigralabs.com
-                </a>
-              </li>
             </ul>
           </div>
         </div>

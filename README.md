@@ -98,5 +98,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-- Email: info@tigralabs.com
 - Website: https://tigralabs.com
