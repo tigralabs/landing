@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { CheckCircle } from "lucide-react";
 import { ContactUsSection } from "@/components/ContactUsSection";
+import { List, ListItem } from "@/components/ui/list";
 
 export const metadata: Metadata = {
   title: "Automation Services - TigraLabs",
@@ -55,20 +56,17 @@ export default function AutomationPage() {
                   strategic goals. With Tigra, you can move forward with speed,
                   precision, and seamless performance.
                 </p>
-                <ul className="space-y-4 mb-8">
+                <List className="mb-8">
                   {[
                     "Workflow and business process automation",
-                    "Robotic Process Automation (RPA)",
+                    // "Robotic Process Automation (RPA)",
                     "Custom software automation solutions",
                     "Integration of AI and machine learning",
-                    "Continuous monitoring and optimization",
+                    // "Continuous monitoring and optimization",
                   ].map((item, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
+                    <ListItem key={index}>{item}</ListItem>
                   ))}
-                </ul>
+                </List>
                 <Button asChild size="lg">
                   <Link href="/contact">Discover automation solutions</Link>
                 </Button>

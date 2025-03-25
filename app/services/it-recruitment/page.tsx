@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
+import { List, ListItem } from "@/components/ui/list";
 
 export const metadata: Metadata = {
   title: "IT Recruitment Services - TigraLabs",
@@ -43,20 +44,17 @@ export default function ITRecruitmentPage() {
                   and ready to empower your business with top-tier talent and
                   scalable solutions.
                 </p>
-                <ul className="space-y-4 mb-8">
+                <List className="mb-8">
                   {[
                     "Access to specialized skills and expertise",
                     "Flexible scaling of your development team",
-                    "Reduced recruitment and onboarding costs",
-                    "Faster time-to-market for your products",
+                    // "Reduced recruitment and onboarding costs",
+                    // "Faster time-to-market for your products",
                     "Focus on your core business while we handle the technical details",
                   ].map((item, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
+                    <ListItem key={index}>{item}</ListItem>
                   ))}
-                </ul>
+                </List>
                 <Button asChild size="lg">
                   <Link href="/contact">
                     Contact us for a tailored solution

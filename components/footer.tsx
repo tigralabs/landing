@@ -72,14 +72,6 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/cases"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/contact"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
+import { List, ListItem } from "@/components/ui/list";
 
 export const metadata: Metadata = {
   title: "Digitalization Services - TigraLabs",
@@ -47,20 +48,17 @@ export default function DigitalizationPage() {
                   Let us help you streamline operations and unlock new growth
                   opportunities.
                 </p>
-                <ul className="space-y-4 mb-8">
+                <List className="mb-8">
                   {[
                     "Comprehensive digital strategy development",
                     "Business process optimization and automation",
                     "Legacy system modernization",
-                    "Cloud migration and infrastructure optimization",
+                    // "Cloud migration and infrastructure optimization",
                     "Data analytics and business intelligence solutions",
                   ].map((item, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
+                    <ListItem key={index}>{item}</ListItem>
                   ))}
-                </ul>
+                </List>
                 <Button asChild size="lg">
                   <Link href="/contact">
                     Start your digital transformation journey

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 interface ContactUsSectionProps {
   title: string;
-  description: string;
+  description?: string;
   buttonText: string;
   buttonLink?: string;
   className?: string;
@@ -25,7 +25,9 @@ export function ContactUsSection({
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center text-left">
             <div className="md:flex-1 md:mr-8">
               <h2 className="text-3xl font-bold mb-6">{title}</h2>
-              <p className="text-lg text-muted-foreground">{description}</p>
+              {description && (
+                <p className="text-lg text-muted-foreground">{description}</p>
+              )}
             </div>
             <div className="md:flex-shrink-0">
               <Button asChild size="lg">

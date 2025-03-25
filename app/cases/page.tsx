@@ -203,7 +203,7 @@ export default function CasesPage() {
 
         <ContactUsSection
           title="Ready to Create Your Success Story?"
-          description="Let's discuss how TigraLabs can help you achieve your business goals through our IT services, outsourcing, digital transformation, and automation solutions."
+          // description="Let's discuss how TigraLabs can help you achieve your business goals through our IT services, outsourcing, digital transformation, and automation solutions."
           buttonText="Contact Us Today"
         />
       </div>

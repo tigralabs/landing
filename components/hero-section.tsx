@@ -44,14 +44,6 @@ export function HeroSection() {
               <Button asChild size="lg" className="font-medium">
                 <Link href="/contact">Get Started</Link>
               </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="font-medium"
-              >
-                <Link href="/cases">View Our Work</Link>
-              </Button>
             </motion.div>
           </motion.div>
           <motion.div

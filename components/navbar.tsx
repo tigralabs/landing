@@ -81,13 +81,6 @@ export function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/cases" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Cases
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
                 <Link href="/about" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     About
@@ -148,17 +141,6 @@ export function Navbar() {
                     </Link>
                   ))}
                 </div>
-                <Link
-                  href="/cases"
-                  className={cn(
-                    "text-lg font-medium transition-colors hover:text-primary",
-                    pathname === "/cases"
-                      ? "text-primary"
-                      : "text-muted-foreground"
-                  )}
-                >
-                  Cases
-                </Link>
                 <Link
                   href="/about"
                   className={cn(

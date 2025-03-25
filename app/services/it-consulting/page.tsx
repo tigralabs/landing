@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { CheckCircle } from "lucide-react";
 import { ContactUsSection } from "@/components/ContactUsSection";
+import { List, ListItem } from "@/components/ui/list";
 
 export const metadata: Metadata = {
   title: "IT Consulting Services - TigraLabs",
@@ -56,20 +57,17 @@ export default function ITConsultingPage() {
                   With expert guidance and ongoing support, we help your
                   business thrive through innovation and efficiency.
                 </p>
-                <ul className="space-y-4 mb-8">
+                <List className="mb-8">
                   {[
                     "Complete project ownership from start to finish",
                     "Tailored solutions aligned with your business objectives",
                     "Transparent communication throughout the development process",
-                    "Quality assurance and rigorous testing",
+                    // "Quality assurance and rigorous testing",
                     "Post-launch support and maintenance",
                   ].map((item, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
+                    <ListItem key={index}>{item}</ListItem>
                   ))}
-                </ul>
+                </List>
                 <Button asChild size="lg">
                   <Link href="/contact">Let's build your product together</Link>
                 </Button>
