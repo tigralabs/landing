@@ -1,9 +1,10 @@
-import { Navbar } from "@/components/navbar";
+import { ContactUsSection } from "@/components/ContactUsSection";
 import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/navbar";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { Metadata } from "next";
 import { CheckCircle } from "lucide-react";
+import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "IT Recruitment Services - TigraLabs",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     "TigraLabs provides specialized experts and ready-to-go teams to help your business thrive with top-tier talent and scalable solutions.",
 };
 
-export default function OutstaffPage() {
+export default function ITRecruitmentPage() {
   return (
     <main className="min-h-screen flex flex-col">
       <Navbar />
@@ -115,6 +116,12 @@ export default function OutstaffPage() {
             </div>
           </div>
         </section>
+
+        <ContactUsSection
+          title="Ready to Build Your Dream Team?"
+          description="Let's discuss how TigraLabs can help you find the perfect talent for your business through our IT recruitment services."
+          buttonText="Contact Us Today"
+        />
       </div>
       <Footer />
     </main>

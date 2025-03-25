@@ -7,19 +7,22 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "TigraLabs transformed our business operations with their automation solutions. We've seen a 40% increase in productivity since implementation.",
+    quote:
+      "TigraLabs transformed our business operations with their automation solutions. We've seen a 40% increase in productivity since implementation.",
     author: "Sarah Johnson",
     role: "CTO, TechVision Inc.",
     avatar: "SJ",
   },
   {
-    quote: "The outstaff team from TigraLabs integrated seamlessly with our existing developers. Their expertise helped us deliver our project ahead of schedule.",
+    quote:
+      "The IT recruitment team from TigraLabs integrated seamlessly with our existing developers. Their expertise helped us deliver our project ahead of schedule.",
     author: "Michael Chen",
     role: "Product Manager, InnovateCorp",
     avatar: "MC",
   },
   {
-    quote: "Our digital transformation journey with TigraLabs has been exceptional. They understood our needs and delivered solutions that exceeded our expectations.",
+    quote:
+      "Our digital transformation journey with TigraLabs has been exceptional. They understood our needs and delivered solutions that exceeded our expectations.",
     author: "Emily Rodriguez",
     role: "CEO, FutureTech Solutions",
     avatar: "ER",
@@ -31,9 +34,12 @@ export function TestimonialsSection() {
     <section className="py-20 flex justify-center">
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            What Our Clients Say
+          </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what our clients have to say about working with TigraLabs.
+            Don't just take our word for it. Here's what our clients have to say
+            about working with TigraLabs.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -57,7 +63,9 @@ export function TestimonialsSection() {
                     </Avatar>
                     <div>
                       <p className="font-medium">{testimonial.author}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.role}
+                      </p>
                     </div>
                   </div>
                 </CardFooter>

@@ -1,6 +1,13 @@
 "use client";
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -11,28 +18,32 @@ const services = [
     icon: Users,
     title: "Outstaff",
     description: "The Right People for Your Business Goals",
-    content: "Need specialized experts or a ready-to-go team? TigraLabs has the agility, strength, and precision to tackle all your challenges.",
+    content:
+      "Need specialized experts or a ready-to-go team? TigraLabs has the agility, strength, and precision to tackle all your challenges.",
     href: "/services/outstaff",
   },
   {
     icon: Code,
     title: "Outsource",
-    description: "Your Complete Product, From Concept to Launch",
-    content: "At TigraLabs, we deliver end-to-end solutions, providing everything you need from concept to launch.",
+    description: "From Idea to Implementation, We’ve Got You Covered",
+    content:
+      "At TigraLabs, we deliver end-to-end solutions, providing everything you need from concept to launch.",
     href: "/services/outsource",
   },
   {
     icon: Laptop,
     title: "Digitalization",
     description: "Driving Success Through Digital Transformation",
-    content: "TigraLabs partners with you to analyze potential areas for improvement and implement solutions that enhance efficiency, reduce costs, and drive innovation.",
+    content:
+      "TigraLabs partners with you to analyze potential areas for improvement and implement solutions that enhance efficiency, reduce costs, and drive innovation.",
     href: "/services/digitalization",
   },
   {
     icon: Cog,
     title: "Automation",
     description: "Unlock Efficiency with Automation",
-    content: "At TigraLabs, we streamline your processes, reduce manual tasks, and boost productivity through intelligent automation solutions.",
+    content:
+      "At TigraLabs, we streamline your processes, reduce manual tasks, and boost productivity through intelligent automation solutions.",
     href: "/services/automation",
   },
 ];
@@ -59,10 +70,11 @@ export function ServicesSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We provide comprehensive IT solutions to help your business grow and succeed in the digital landscape.
+            We provide comprehensive IT solutions to help your business grow and
+            succeed in the digital landscape.
           </p>
         </div>
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           variants={container}
           initial="hidden"

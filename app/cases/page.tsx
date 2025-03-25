@@ -1,17 +1,16 @@
-import { Navbar } from "@/components/navbar";
+import { ContactUsSection } from "@/components/ContactUsSection";
 import { Footer } from "@/components/footer";
-import { Metadata } from "next";
+import { Navbar } from "@/components/navbar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Case Studies - TigraLabs",
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
 const caseStudies = [
   {
     title: "E-commerce Platform Transformation",
-    client: "RetailTech Inc.",
+    // client: "RetailTech Inc.",
     description:
       "Modernized a legacy e-commerce platform, resulting in a 45% increase in conversion rates and 30% faster page load times.",
     image:
@@ -32,7 +31,7 @@ const caseStudies = [
   },
   {
     title: "Automated Inventory Management System",
-    client: "Global Logistics Co.",
+    // client: "Global Logistics Co.",
     description:
       "Developed an AI-powered inventory management system that reduced manual processing time by 85% and improved accuracy by 40%.",
     image:
@@ -42,27 +41,27 @@ const caseStudies = [
   },
   {
     title: "Healthcare Patient Portal",
-    client: "MediCare Solutions",
+    // client: "MediCare Solutions",
     description:
       "Built a secure, HIPAA-compliant patient portal that streamlined appointment scheduling and improved patient engagement by 60%.",
     image:
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
     technologies: ["Angular", ".NET Core", "Azure", "SQL Server"],
-    service: "Outsource",
+    service: "IT consulting",
   },
   {
     title: "Financial Analytics Dashboard",
-    client: "Investment Partners Ltd.",
+    // client: "Investment Partners Ltd.",
     description:
       "Delivered a real-time financial analytics dashboard that reduced reporting time from days to minutes and improved decision-making.",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
     technologies: ["Vue.js", "GraphQL", "Elasticsearch", "Kubernetes"],
-    service: "Outstaff",
+    service: "IT recruitment",
   },
   {
     title: "Manufacturing Process Automation",
-    client: "Industrial Innovations",
+    // client: "Industrial Innovations",
     description:
       "Implemented IoT-based automation system that increased production efficiency by 35% and reduced operational costs by 25%.",
     image:
@@ -72,13 +71,13 @@ const caseStudies = [
   },
   {
     title: "Mobile Banking Application",
-    client: "NextGen Bank",
+    // client: "NextGen Bank",
     description:
       "Developed a secure, feature-rich mobile banking application that increased customer engagement by 70% and transaction volume by 50%.",
     image:
       "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
     technologies: ["React Native", "Node.js", "MongoDB", "Firebase"],
-    service: "Outsource",
+    service: "IT consulting",
   },
 ];
 
@@ -88,18 +87,21 @@ const testimonials = [
       "TigraLabs delivered beyond our expectations. Their team's technical expertise and business understanding helped us achieve our digital transformation goals faster than we thought possible.",
     author: "David Chen",
     role: "CTO, RetailTech Inc.",
+    stars: 5,
   },
   {
     quote:
       "The automation solution provided by TigraLabs has revolutionized our operations. We've seen dramatic improvements in efficiency and accuracy, allowing us to focus on strategic growth.",
     author: "Maria Rodriguez",
     role: "Operations Director, Global Logistics Co.",
+    stars: 5,
   },
   {
     quote:
       "Working with TigraLabs has been a game-changer for our healthcare platform. Their attention to security and compliance, while still delivering an intuitive user experience, was impressive.",
     author: "Dr. James Wilson",
     role: "CEO, MediCare Solutions",
+    stars: 5,
   },
 ];
 
@@ -142,9 +144,9 @@ export default function CasesPage() {
                   </div>
                   <CardHeader>
                     <CardTitle>{caseStudy.title}</CardTitle>
-                    <CardDescription>
+                    {/* <CardDescription>
                       Client: {caseStudy.client}
-                    </CardDescription>
+                    </CardDescription> */}
                   </CardHeader>
                   <CardContent className="flex-grow">
                     <p className="text-muted-foreground mb-4">
@@ -179,19 +181,19 @@ export default function CasesPage() {
                 <Card key={index} className="h-full flex flex-col">
                   <CardContent className="pt-6 flex-grow">
                     <div className="mb-4">
-                      {[...Array(5)].map((_, i) => (
+                      {[...Array(testimonial.stars)].map((_, i) => (
                         <span key={i} className="text-yellow-500">
                           ★
                         </span>
                       ))}
                     </div>
                     <p className="text-lg italic mb-6">"{testimonial.quote}"</p>
-                    <div>
+                    {/* <div>
                       <p className="font-medium">{testimonial.author}</p>
                       <p className="text-sm text-muted-foreground">
                         {testimonial.role}
                       </p>
-                    </div>
+                    </div> */}
                   </CardContent>
                 </Card>
               ))}
@@ -199,25 +201,11 @@ export default function CasesPage() {
           </div>
         </section>
 
-        <section className="py-20 flex justify-center">
-          <div className="container">
-            <div className="bg-primary/5 rounded-lg p-8 md:p-12">
-              <div className="max-w-3xl mx-auto text-center">
-                <h2 className="text-3xl font-bold mb-6">
-                  Ready to Create Your Success Story?
-                </h2>
-                <p className="text-lg text-muted-foreground mb-8">
-                  Let's discuss how TigraLabs can help you achieve your business
-                  goals through our IT services, outsourcing, digital
-                  transformation, and automation solutions.
-                </p>
-                <Button asChild size="lg">
-                  <Link href="/contact">Contact Us Today</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ContactUsSection
+          title="Ready to Create Your Success Story?"
+          description="Let's discuss how TigraLabs can help you achieve your business goals through our IT services, outsourcing, digital transformation, and automation solutions."
+          buttonText="Contact Us Today"
+        />
       </div>
       <Footer />
     </main>

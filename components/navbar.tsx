@@ -15,21 +15,20 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { ModeToggle } from "@/components/mode-toggle";
 import { Merge as Tiger } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
 const services = [
   {
-    title: "Outstaff",
-    href: "/services/outstaff",
+    title: "IT recruitment",
+    href: "/services/it-recruitment",
     description: "The Right People for Your Business Goals",
   },
   {
-    title: "Outsource",
-    href: "/services/outsource",
-    description: "Your Complete Product, From Concept to Launch",
+    title: "IT consulting",
+    href: "/services/it-consulting",
+    description: "From Idea to Implementation, We've Got You Covered",
   },
   {
     title: "Digitalization",
@@ -106,7 +105,6 @@ export function Navbar() {
           </NavigationMenu>
 
           <div className="flex items-center gap-4">
-            <ModeToggle />
             <Button asChild>
               <Link href="/contact">Get Started</Link>
             </Button>
@@ -115,7 +113,6 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         <div className="flex md:hidden items-center gap-4">
-          <ModeToggle />
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">

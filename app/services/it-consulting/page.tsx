@@ -4,14 +4,15 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Metadata } from "next";
 import { CheckCircle } from "lucide-react";
+import { ContactUsSection } from "@/components/ContactUsSection";
 
 export const metadata: Metadata = {
-  title: "Outsource Services - TigraLabs",
+  title: "IT Consulting Services - TigraLabs",
   description:
     "TigraLabs delivers end-to-end solutions, providing everything you need from concept to launch with expert guidance and ongoing support.",
 };
 
-export default function OutsourcePage() {
+export default function ITConsultingPage() {
   return (
     <main className="min-h-screen flex flex-col">
       <Navbar />
@@ -23,7 +24,7 @@ export default function OutsourcePage() {
                 Complete Solutions, Built for You
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                From Idea to Implementation, We’ve Got You Covered
+                From Idea to Implementation, We've Got You Covered
               </p>
             </div>
           </div>
@@ -125,6 +126,12 @@ export default function OutsourcePage() {
             </div>
           </div>
         </section>
+
+        <ContactUsSection
+          title="Ready to Transform Your Business?"
+          description="Let's discuss how TigraLabs can help you achieve your business goals through our comprehensive IT consulting services."
+          buttonText="Contact Us Today"
+        />
       </div>
       <Footer />
     </main>

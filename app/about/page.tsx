@@ -25,7 +25,7 @@ const teamMembers = [
   },
   {
     name: "Tasha Zagoskina",
-    role: "CEO, FutureTech Solutions",
+    role: "FutureTech Solutions",
     bio: "Strategic partner bringing extensive experience in technology solutions and driving collaborative innovation and growth.",
     avatar: "TZ",
   },
