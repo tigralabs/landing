@@ -1,17 +1,34 @@
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { Metadata } from "next";
-import { CheckCircle } from "lucide-react";
 import { ContactUsSection } from "@/components/ContactUsSection";
-import { List, ListItem } from "@/components/ui/list";
+import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/navbar";
+import { TextSlidesCarousel } from "@/components/TextSlidesCarousel";
+import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "IT Consulting Services - TigraLabs",
   description:
     "TigraLabs delivers end-to-end solutions, providing everything you need from concept to launch with expert guidance and ongoing support.",
 };
+
+const slides = [
+  {
+    title: "Complete Project Ownership from Start to Finish",
+    description:
+      "We manage the entire project lifecycle, from inception to delivery.",
+  },
+  {
+    title: "Tailored Solutions Aligned with Your Business Objectives",
+    description:
+      "Our solutions are designed to meet your specific business goals.",
+  },
+  {
+    title: "IT Process Analysis & Strategic Development Planning",
+    description:
+      "We conduct a comprehensive analysis of your existing systems and workflows to identify areas for improvement",
+  },
+];
 
 export default function ITConsultingPage() {
   return (
@@ -34,13 +51,19 @@ export default function ITConsultingPage() {
         <section className="py-20 flex justify-center">
           <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="rounded-lg overflow-hidden shadow-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
-                  alt="Project planning"
-                  className="w-full h-full object-cover"
+              <div className="relative rounded-lg overflow-hidden shadow-xl">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage:
+                      "url(https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80)",
+                  }}
                 />
+                <div className="relative bg-black/50 backdrop-blur-sm">
+                  <TextSlidesCarousel slides={slides} />
+                </div>
               </div>
+
               <div>
                 <h2 className="text-3xl font-bold mb-6">
                   From Idea to Implementation, We've Got You Covered
@@ -53,21 +76,7 @@ export default function ITConsultingPage() {
                   guidance and ongoing support, we help your business thrive
                   through innovation and efficiency.
                 </p>
-                <p className="text-lg text-muted-foreground mb-6">
-                  With expert guidance and ongoing support, we help your
-                  business thrive through innovation and efficiency.
-                </p>
-                <List className="mb-8">
-                  {[
-                    "Complete project ownership from start to finish",
-                    "Tailored solutions aligned with your business objectives",
-                    "Transparent communication throughout the development process",
-                    // "Quality assurance and rigorous testing",
-                    "Post-launch support and maintenance",
-                  ].map((item, index) => (
-                    <ListItem key={index}>{item}</ListItem>
-                  ))}
-                </List>
+
                 <Button asChild size="lg">
                   <Link href="/contact">Let's build your product together</Link>
                 </Button>
@@ -126,8 +135,7 @@ export default function ITConsultingPage() {
         </section>
 
         <ContactUsSection
-          title="Ready to Transform Your Business?"
-          description="Let's discuss how TigraLabs can help you achieve your business goals through our comprehensive IT consulting services."
+          title="Ready to Discover Custom Solutions for Your Business?"
           buttonText="Contact Us Today"
         />
       </div>

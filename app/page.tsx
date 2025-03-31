@@ -15,7 +15,6 @@ export default function Home() {
         <TestimonialsSection />
         <ContactUsSection
           title="Ready to Transform Your Business?"
-          description="Let's discuss how TigraLabs can help you achieve your business goals through our comprehensive IT services."
           buttonText="Contact Us Today"
         />
       </div>

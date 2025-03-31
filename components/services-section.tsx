@@ -69,10 +69,6 @@ export function ServicesSection() {
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We provide comprehensive IT solutions to help your business grow and
-            succeed in the digital landscape.
-          </p>
         </div>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"

@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     "TigraLabs specializes in IT services, outsourcing, digital transformation, and automation to boost your business operations.",
   keywords:
     "IT services, outsourcing, digital transformation, automation, staff augmentation, TigraLabs",
+  icons: {
+    icon: [{ url: "/favicon.ico" }],
+    shortcut: "/favicon.ico",
+  },
+  manifest: "/site.webmanifest",
+  themeColor: "#0F172A",
+  viewport: "width=device-width, initial-scale=1",
   openGraph: {
     type: "website",
     locale: "en_US",

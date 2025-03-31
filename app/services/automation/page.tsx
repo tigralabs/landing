@@ -1,17 +1,39 @@
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { Metadata } from "next";
-import { CheckCircle } from "lucide-react";
 import { ContactUsSection } from "@/components/ContactUsSection";
-import { List, ListItem } from "@/components/ui/list";
+import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/navbar";
+import { TextSlidesCarousel } from "@/components/TextSlidesCarousel";
+import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Automation Services - TigraLabs",
   description:
     "TigraLabs streamlines your processes, reduces manual tasks, and boosts productivity through intelligent automation solutions.",
 };
+
+const slides = [
+  {
+    title: "Automation Strategy for Operational Efficiency",
+    description:
+      "Replacing manual tasks with tailored automation solutions to boost productivity and reduce errors.",
+  },
+  {
+    title: "Process Automation to Eliminate Manual Work",
+    description:
+      "Streamlining workflows by automating repetitive tasks, allowing teams to focus on high-value activities.",
+  },
+  {
+    title: "DevOps Automation",
+    description:
+      "Implementing automation in the development and deployment pipeline to increase speed, reliability, and scalability.",
+  },
+  {
+    title: "Automated Testing Solutions",
+    description:
+      "Replacing manual testing with automated testing frameworks for faster, more accurate results.",
+  },
+];
 
 export default function AutomationPage() {
   return (
@@ -34,19 +56,23 @@ export default function AutomationPage() {
         <section className="py-20 flex justify-center">
           <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="rounded-lg overflow-hidden shadow-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
-                  alt="Business automation"
-                  className="w-full h-full object-cover"
+              <div className="relative rounded-lg overflow-hidden shadow-xl">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage:
+                      "url(https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80)",
+                  }}
                 />
+                <div className="relative bg-black/50 backdrop-blur-sm">
+                  <TextSlidesCarousel slides={slides} />
+                </div>
               </div>
               <div>
                 <h2 className="text-3xl font-bold mb-6">
                   Automate Your Business, Elevate Efficiency
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Want to take efficiency to the next level through automation?
                   At TigraLabs, we streamline your processes, reduce manual
                   tasks, and boost productivity.
                 </p>
@@ -56,17 +82,6 @@ export default function AutomationPage() {
                   strategic goals. With Tigra, you can move forward with speed,
                   precision, and seamless performance.
                 </p>
-                <List className="mb-8">
-                  {[
-                    "Workflow and business process automation",
-                    // "Robotic Process Automation (RPA)",
-                    "Custom software automation solutions",
-                    "Integration of AI and machine learning",
-                    // "Continuous monitoring and optimization",
-                  ].map((item, index) => (
-                    <ListItem key={index}>{item}</ListItem>
-                  ))}
-                </List>
                 <Button asChild size="lg">
                   <Link href="/contact">Discover automation solutions</Link>
                 </Button>
@@ -127,7 +142,6 @@ export default function AutomationPage() {
 
         <ContactUsSection
           title="Ready to Automate?"
-          description="Let's discuss how automation can transform your business operations and drive growth. Our experts are ready to create a tailored solution for your specific needs."
           buttonText="Get Started with Automation"
         />
       </div>

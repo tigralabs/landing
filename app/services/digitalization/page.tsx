@@ -1,17 +1,34 @@
 import { ContactUsSection } from "@/components/ContactUsSection";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
+import { TextSlidesCarousel } from "@/components/TextSlidesCarousel";
 import { Button } from "@/components/ui/button";
-import { CheckCircle } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
-import { List, ListItem } from "@/components/ui/list";
 
 export const metadata: Metadata = {
   title: "Digitalization Services - TigraLabs",
   description:
     "TigraLabs helps businesses streamline operations and unlock new growth opportunities through digital transformation.",
 };
+
+const slides = [
+  {
+    title: "Comprehensive Digital Strategy Development",
+    description:
+      "Designing end-to-end digital strategies to accelerate your transformation and drive long-term growth.",
+  },
+  {
+    title: "Legacy System Digitalization",
+    description:
+      "Modernizing outdated systems with advanced digital solutions for improved functionality and scalability.",
+  },
+  {
+    title: "Data-Driven Digital Insights",
+    description:
+      "Utilizing data analytics and business intelligence to make informed, real-time decisions that power digital success.",
+  },
+];
 
 export default function DigitalizationPage() {
   return (
@@ -25,7 +42,7 @@ export default function DigitalizationPage() {
                 Driving Success Through Digital Transformation
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Powering Your Business with Digitalisation
+                Boost efficiency and reduce costs with smart automation
               </p>
             </div>
           </div>
@@ -40,37 +57,32 @@ export default function DigitalizationPage() {
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6">
                   In today's fast-paced world, digitalization is key to staying
-                  ahead. TigraLabs partners with you to analyze potential areas
-                  for improvement and implement solutions that enhance
+                  ahead. At TigraLabs, we collaborate with you to identify
+                  improvement areas and implement solutions that boost
                   efficiency, reduce costs, and drive innovation.
                 </p>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Let us help you streamline operations and unlock new growth
+                  Let us streamline your operations and unlock new growth
                   opportunities.
                 </p>
-                <List className="mb-8">
-                  {[
-                    "Comprehensive digital strategy development",
-                    "Business process optimization and automation",
-                    "Legacy system modernization",
-                    // "Cloud migration and infrastructure optimization",
-                    "Data analytics and business intelligence solutions",
-                  ].map((item, index) => (
-                    <ListItem key={index}>{item}</ListItem>
-                  ))}
-                </List>
+
                 <Button asChild size="lg">
                   <Link href="/contact">
                     Start your digital transformation journey
                   </Link>
                 </Button>
               </div>
-              <div className="rounded-lg overflow-hidden shadow-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
-                  alt="Digital transformation"
-                  className="w-full h-full object-cover"
+              <div className="relative rounded-lg overflow-hidden shadow-xl">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage:
+                      "url(https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80)",
+                  }}
                 />
+                <div className="relative bg-black/50 backdrop-blur-sm">
+                  <TextSlidesCarousel slides={slides} />
+                </div>
               </div>
             </div>
           </div>
@@ -113,9 +125,6 @@ export default function DigitalizationPage() {
 
         <ContactUsSection
           title="Ready to Transform Your Business?"
-          description=" Take the first step towards digital excellence. Our team of
-                  experts is ready to help you navigate the digital landscape
-                  and unlock new opportunities for growth."
           buttonText="Schedule a Consultation"
         />
       </div>

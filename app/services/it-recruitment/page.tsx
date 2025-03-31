@@ -1,17 +1,34 @@
 import { ContactUsSection } from "@/components/ContactUsSection";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
+import { TextSlidesCarousel } from "@/components/TextSlidesCarousel";
 import { Button } from "@/components/ui/button";
-import { CheckCircle } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
-import { List, ListItem } from "@/components/ui/list";
 
 export const metadata: Metadata = {
   title: "IT Recruitment Services - TigraLabs",
   description:
     "TigraLabs provides specialized experts and ready-to-go teams to help your business thrive with top-tier talent and scalable solutions.",
 };
+
+const slides = [
+  {
+    title: "Access to Top IT Talent & Scalable Development Teams",
+    description:
+      "We connect you with skilled professionals and provide flexible scaling for your development team, ensuring you get the right expertise at every stage",
+  },
+  {
+    title: "Flexible Scaling of Your Development Team",
+    description:
+      "Effortlessly scale your development team up or down based on your project needs, ensuring optimal efficiency and cost-effectiveness",
+  },
+  {
+    title: "Custom Software Solutions with Fast Delivery & Cost Efficiency",
+    description:
+      "We create tailored digital solutions with agile development, delivering high-quality results on time and within budget",
+  },
+];
 
 export default function ITRecruitmentPage() {
   return (
@@ -25,7 +42,7 @@ export default function ITRecruitmentPage() {
                 The Right People for Your Business Goals
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Bringing you the right talent to help your business thrive
+                Tigra brings you the right talent to drive your business forward
               </p>
             </div>
           </div>
@@ -44,29 +61,24 @@ export default function ITRecruitmentPage() {
                   and ready to empower your business with top-tier talent and
                   scalable solutions.
                 </p>
-                <List className="mb-8">
-                  {[
-                    "Access to specialized skills and expertise",
-                    "Flexible scaling of your development team",
-                    // "Reduced recruitment and onboarding costs",
-                    // "Faster time-to-market for your products",
-                    "Focus on your core business while we handle the technical details",
-                  ].map((item, index) => (
-                    <ListItem key={index}>{item}</ListItem>
-                  ))}
-                </List>
+
                 <Button asChild size="lg">
                   <Link href="/contact">
                     Contact us for a tailored solution
                   </Link>
                 </Button>
               </div>
-              <div className="rounded-lg overflow-hidden shadow-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
-                  alt="Team collaboration"
-                  className="w-full h-full object-cover"
+              <div className="relative rounded-lg overflow-hidden shadow-xl">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage:
+                      "url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80)",
+                  }}
                 />
+                <div className="relative bg-black/50 backdrop-blur-sm">
+                  <TextSlidesCarousel slides={slides} />
+                </div>
               </div>
             </div>
           </div>
@@ -117,7 +129,6 @@ export default function ITRecruitmentPage() {
 
         <ContactUsSection
           title="Ready to Build Your Dream Team?"
-          description="Let's discuss how TigraLabs can help you find the perfect talent for your business through our IT recruitment services."
           buttonText="Contact Us Today"
         />
       </div>

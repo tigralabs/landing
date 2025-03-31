@@ -56,7 +56,7 @@ export function TestimonialsSection() {
                   <Quote className="h-8 w-8 text-primary/40 mb-4" />
                   <p className="text-lg">{testimonial.quote}</p>
                 </CardContent>
-                <CardFooter className="border-t pt-6">
+                {/* <CardFooter className="border-t pt-6">
                   <div className="flex items-center gap-4">
                     <Avatar>
                       <AvatarFallback>{testimonial.avatar}</AvatarFallback>
@@ -68,7 +68,7 @@ export function TestimonialsSection() {
                       </p>
                     </div>
                   </div>
-                </CardFooter>
+                </CardFooter> */}
               </Card>
             </motion.div>
           ))}
