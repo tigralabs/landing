@@ -18,29 +18,7 @@ import {
 import { Merge as Tiger } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-
-const services = [
-  {
-    title: "IT recruitment",
-    href: "/services/it-recruitment",
-    description: "The Right People for Your Business Goals",
-  },
-  {
-    title: "IT consulting",
-    href: "/services/it-consulting",
-    description: "From Idea to Implementation, We've Got You Covered",
-  },
-  {
-    title: "Digitalization",
-    href: "/services/digitalization",
-    description: "Driving Success Through Digital Transformation",
-  },
-  {
-    title: "Automation",
-    href: "/services/automation",
-    description: "Unlock Efficiency with Automation",
-  },
-];
+import { services } from "./services-section";
 
 export function Navbar() {
   const pathname = usePathname();

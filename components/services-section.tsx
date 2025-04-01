@@ -13,22 +13,22 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Users, Code, Laptop, Cog } from "lucide-react";
 
-const services = [
+export const services = [
   {
     icon: Users,
-    title: "Outstaff",
+    title: "IT recruitment",
+    href: "/services/it-recruitment",
     description: "The Right People for Your Business Goals",
     content:
       "Need specialized experts or a ready-to-go team? TigraLabs has the agility, strength, and precision to tackle all your challenges.",
-    href: "/services/outstaff",
   },
   {
     icon: Code,
-    title: "Outsource",
+    title: "IT consulting",
+    href: "/services/it-consulting",
     description: "From Idea to Implementation, We’ve Got You Covered",
     content:
       "At TigraLabs, we deliver end-to-end solutions, providing everything you need from concept to launch.",
-    href: "/services/outsource",
   },
   {
     icon: Laptop,

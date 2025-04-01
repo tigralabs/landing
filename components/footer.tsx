@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Merge as Tiger } from "lucide-react";
+import { services } from "./services-section";
 
 export function Footer() {
   return (
@@ -25,38 +28,16 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/services/it-recruitment"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  IT recruitment
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/it-consulting"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  IT consulting
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/digitalization"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Digitalization
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/automation"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Automation
-                </Link>
-              </li>
+              {services.map((service) => (
+                <li key={service.href}>
+                  <Link
+                    href={service.href}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
@@ -72,6 +53,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/cases"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Case Studies
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -81,61 +70,29 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Connect</h3>
+            <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="mailto:contact@tigralabs.com"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  LinkedIn
+                  contact@tigralabs.com
                 </a>
               </li>
               <li>
                 <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="tel:+1234567890"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Twitter
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Facebook
+                  +1 (234) 567-890
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div className="mt-12 border-t pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} TigraLabs. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <Link
-                href="/privacy"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                Terms of Service
-              </Link>
-            </div>
-          </div>
+        <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
+          <p>© {new Date().getFullYear()} TigraLabs. All rights reserved.</p>
         </div>
       </div>
     </footer>
