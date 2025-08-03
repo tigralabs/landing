@@ -21,6 +21,8 @@ const nextConfig = {
     NEXT_PUBLIC_BUILD_TIME: new Date().toISOString(),
     NEXT_PUBLIC_COMMIT_HASH: getGitCommitHash(),
     NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV || "development",
+    NEXT_PUBLIC_SHOW_TEAM_INFO:
+      process.env.NEXT_PUBLIC_SHOW_TEAM_INFO || "false",
   },
   eslint: {
     ignoreDuringBuilds: true,

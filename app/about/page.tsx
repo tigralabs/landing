@@ -117,29 +117,33 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="py-20 flex justify-center">
-          <div className="container">
-            <h2 className="text-3xl font-bold mb-12 text-center">
-              Meet Our Team
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
-              {teamMembers.map((member, index) => (
-                <Card key={index}>
-                  <CardContent className="pt-6 flex flex-col items-center text-center">
-                    <Avatar className="h-24 w-24 mb-6">
-                      <AvatarFallback>{member.avatar}</AvatarFallback>
-                    </Avatar>
-                    <h3 className="text-xl font-semibold">{member.name}</h3>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      {member.role}
-                    </p>
-                    <p className="text-muted-foreground">{member.bio}</p>
-                  </CardContent>
-                </Card>
-              ))}
+        {process.env.NEXT_PUBLIC_SHOW_TEAM_INFO === "true" && (
+          <section className="py-20 flex justify-center">
+            <div className="container">
+              <h2 className="text-3xl font-bold mb-12 text-center">
+                Meet Our Team
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+                {teamMembers.map((member, index) => (
+                  <Card key={index}>
+                    <CardContent className="pt-6 flex flex-col items-center text-center">
+                      <Avatar className="h-24 w-24 mb-6">
+                        <AvatarFallback>{member.avatar}</AvatarFallback>
+                      </Avatar>
+                      <h3 className="text-xl font-semibold">{member.name}</h3>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        {member.role}
+                      </p>
+                      <p className="text-muted-foreground">{member.bio}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
+
+        <section className="py-10 flex justify-center"></section>
 
         <section className="py-20 bg-muted/50 flex justify-center">
           <div className="container">

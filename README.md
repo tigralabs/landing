@@ -26,6 +26,18 @@ A modern, responsive landing page for TigraLabs built with Next.js 13, TypeScrip
 - **Icons:** Lucide React
 - **Theme:** next-themes
 
+## Environment Variables
+
+The application uses the following environment variables:
+
+- `NEXT_PUBLIC_SHOW_TEAM_INFO` (default: `false`) - Controls whether the team section is displayed on the About page. Set to `"true"` to show the team section.
+
+To enable the team section, create a `.env.local` file in the root directory and add:
+
+```
+NEXT_PUBLIC_SHOW_TEAM_INFO=true
+```
+
 ## Getting Started
 
 ### Prerequisites
