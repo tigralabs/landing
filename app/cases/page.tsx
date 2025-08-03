@@ -171,35 +171,39 @@ export default function CasesPage() {
           </div>
         </section>
 
-        <section className="py-20 bg-muted/50 flex justify-center">
-          <div className="container">
-            <h2 className="text-3xl font-bold mb-12 text-center">
-              Client Testimonials
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <Card key={index} className="h-full flex flex-col">
-                  <CardContent className="pt-6 flex-grow">
-                    <div className="mb-4">
-                      {[...Array(testimonial.stars)].map((_, i) => (
-                        <span key={i} className="text-yellow-500">
-                          ★
-                        </span>
-                      ))}
-                    </div>
-                    <p className="text-lg italic mb-6">"{testimonial.quote}"</p>
-                    {/* <div>
+        {false && (
+          <section className="py-20 bg-muted/50 flex justify-center">
+            <div className="container">
+              <h2 className="text-3xl font-bold mb-12 text-center">
+                Client Testimonials
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {testimonials.map((testimonial, index) => (
+                  <Card key={index} className="h-full flex flex-col">
+                    <CardContent className="pt-6 flex-grow">
+                      <div className="mb-4">
+                        {[...Array(testimonial.stars)].map((_, i) => (
+                          <span key={i} className="text-yellow-500">
+                            ★
+                          </span>
+                        ))}
+                      </div>
+                      <p className="text-lg italic mb-6">
+                        "{testimonial.quote}"
+                      </p>
+                      {/* <div>
                       <p className="font-medium">{testimonial.author}</p>
                       <p className="text-sm text-muted-foreground">
                         {testimonial.role}
                       </p>
                     </div> */}
-                  </CardContent>
-                </Card>
-              ))}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         <ContactUsSection
           title="Ready to Create Your Success Story?"

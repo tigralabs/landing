@@ -74,18 +74,10 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="mailto:contact@tigralabs.com"
+                  href="mailto:info@tigralabs.com"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  contact@tigralabs.com
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+1234567890"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  +1 (234) 567-890
+                  info@tigralabs.com
                 </a>
               </li>
             </ul>
