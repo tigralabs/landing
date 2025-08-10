@@ -41,7 +41,7 @@ export default function AutomationPage() {
       <Navbar />
       <div className="flex-grow">
         <section className="py-20 bg-muted/50 flex justify-center">
-          <div className="container">
+          <div className="container mx-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Unlock Efficiency with Automation
@@ -54,7 +54,7 @@ export default function AutomationPage() {
         </section>
 
         <section className="py-20 flex justify-center">
-          <div className="container">
+          <div className="container mx-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="relative rounded-lg overflow-hidden shadow-xl">
                 <div
@@ -91,7 +91,7 @@ export default function AutomationPage() {
         </section>
 
         <section className="py-20 bg-muted/50 flex justify-center">
-          <div className="container">
+          <div className="container mx-4">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Benefits of Automation
             </h2>

@@ -20,7 +20,7 @@ export function HeroSection() {
   // }, []);
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden mx-4">
       <div className="absolute inset-0">
         {/* <img
           src="/assets/tiger-bg.jpg"

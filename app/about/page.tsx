@@ -49,7 +49,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="py-20 flex justify-center">
+        <section className="py-20 flex justify-center mx-4">
           <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
@@ -86,7 +86,7 @@ export default function AboutPage() {
         <section className="py-20 bg-muted/50 flex justify-center">
           <div className="container">
             <h2 className="text-3xl font-bold mb-6 text-center">Our Values</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 mx-4">
               {[
                 {
                   title: "Excellence",
@@ -123,7 +123,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold mb-12 text-center">
                 Meet Our Team
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 mx-4">
                 {teamMembers.map((member, index) => (
                   <Card key={index}>
                     <CardContent className="pt-6 flex flex-col items-center text-center">
@@ -154,7 +154,7 @@ export default function AboutPage() {
                 solutions that drive real results. Our approach is
                 collaborative, transparent, and focused on your success.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 mx-4">
                 {[
                   {
                     title: "Expertise",

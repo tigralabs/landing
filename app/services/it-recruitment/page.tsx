@@ -36,7 +36,7 @@ export default function ITRecruitmentPage() {
       <Navbar />
       <div className="flex-grow">
         <section className="py-20 bg-muted/50 flex justify-center">
-          <div className="container">
+          <div className="container mx-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 The Right People for Your Business Goals
@@ -49,7 +49,7 @@ export default function ITRecruitmentPage() {
         </section>
 
         <section className="py-20 flex justify-center">
-          <div className="container">
+          <div className="container mx-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-6">
@@ -89,7 +89,7 @@ export default function ITRecruitmentPage() {
             <h2 className="text-3xl font-bold mb-12 text-center">
               Our IT Recruitment Process
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-4">
               {[
                 {
                   step: "1",
