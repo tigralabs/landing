@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Merge as Tiger } from "lucide-react";
+import { TigerLogoIcon as Tiger } from "./tiger-icon";
 import { services } from "./services-section";
 
 export function Footer() {
